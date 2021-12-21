@@ -1,0 +1,3 @@
+https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=MSWshALLBlRYvUhrB2i7ngAXOMvRr3tZ
+https://api.nytimes.com/svc/books/v3/lists/best-sellers/history.json?api-key=MSWshALLBlRYvUhrB2i7ngAXOMvRr3tZ
+https://api.nytimes.com/svc/books/v3/lists/best-sellers/overview.json?api-key=MSWshALLBlRYvUhrB2i7ngAXOMvRr3tZ
