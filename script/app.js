@@ -15,7 +15,7 @@ const titleCase = function (str) {
 };
 
 function scrollFunction(mybutton) {
-	if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+	if (document.body.scrollTop > 2000 || document.documentElement.scrollTop > 2000) {
 		mybutton.style.display = 'block';
 	} else {
 		mybutton.style.display = 'none';
@@ -69,20 +69,19 @@ const showHardCovers = function (jsonObject) {
 
 				<div class="c-boek-text">
 					<div class="c-boek-text__head">
-						<h1 class="c-boek-text__head-number">${nummer}.</h1>
-						<h1 class="c-boek__title">${titelUpper}</h1>
+						<h1 class="c-boek-text__head">${nummer}.	${titelUpper}</h1>
 						<div class="c-boek-text__head-vgl">
 							<a>${verschil}</a>
-							<img src="images/book_${foto}_black_24dp.svg" alt="">                           
+							<img src="images/book_${foto}_black_24dp.svg" alt="${foto}}">                           
 						</div>
 					</div>
-					<h2 class="c-boek-auteur">${auteur}</h2>    
+					<h2 class="c-boek-auteur">By ${auteur}</h2>    
 					<div class="c-content">
-						<h3 class="c-content-omschrijving">Omschrijving:</h3>
-						<p class="c-content-omschrijving__text">${omschrijving}</p>
-						<h3 class="c-content-isbn">ISBN:</h3>
-						<p class="c-content-isbn__text">${isbnNummer}</p>
-						<h3 class="c-content-bestellen">Bestellen: </h3>
+						<h3>Discription:</h3>
+						<p>${omschrijving}</p>
+						<h3>ISBN:</h3>
+						<p>${isbnNummer}</p>
+						<h3>Order: </h3>
 						<a class="c-link-cta" href="${kopen}">Amazon.com</a>
 					</div>
 				</div>

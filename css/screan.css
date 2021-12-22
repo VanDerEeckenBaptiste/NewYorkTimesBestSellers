@@ -37,6 +37,22 @@
 
 	/* transitions */
 	--global-transitionTiming-alpha: all 0.1s ease-out;
+
+	/* Baseline settings */
+	--global-baseline: 8px;
+	--global-whitespace: calc(var(--global-baseline) * 3); /* = 24px */
+
+	--global-whitespace-xs: calc(var(--global-baseline) / 2); /* = 4px */
+	--global-whitespace-sm: calc(var(--global-baseline) * 1); /*  = 8px */
+	--global-whitespace-md: calc(var(--global-baseline) * 2); /*  = 16px */
+	--global-whitespace-lg: calc(var(--global-baseline) * 4); /*  = 32px */
+	--global-whitespace-xl: calc(var(--global-whitespace) * 2); /*  = 48px */
+	--global-whitespace-xxl: calc(var(--global-whitespace) * 3); /*  = 72px */
+
+	/* button */
+	--button-color: #fff;
+	--button-backgroundColor: #1c95e6;
+	--button-focus-backgroundColor: #1aa3ff;
 }
 
 /* CSS variables here */
@@ -525,26 +541,25 @@ a:focus {
 	flex-direction: row;
 	flex-wrap: wrap;
 	align-items: flex-start;
-	/* justify-content: center; */
+	justify-content: center;
 	margin-bottom: 2em;
 }
 
 .c-boek__image {
 	padding-right: 2em;
+	padding-bottom: 2em;
 }
 
 .c-boek-text {
-	/* margin-top: 1em; */
+	/* padding-top: 2em; */
 }
 
 .c-boek-text__head {
 	display: flex;
 	align-items: center;
 	flex-direction: row;
-}
-
-.c-boek-text__head-number {
-	margin-right: 1em;
+	flex-wrap: wrap;
+	justify-content: flex-start;
 }
 
 .c-boek-text__head-vgl {
@@ -560,28 +575,63 @@ a:focus {
 }
 
 .c-boek-text__head-vgl > a {
-	font-size: 1.5em;
+	font-size: 1.25em;
 }
 
 .c-boek-auteur {
-	margin-top: 1rem;
+	margin-top: 0.5rem;
 }
 
 .c-content {
-	margin-top: 1em;
+	margin-top: 1rem;
 	display: grid;
 	grid-template-columns: 200px 500px;
-	grid-template-rows: 50px 50px 50px;
+	grid-template-rows: 1fr 50px 50px;
 }
 
 @media (max-width: 768px) {
 	.c-boek {
-		/* display: flex; */
-
+		display: flex;
 		align-content: space-between;
 	}
 
 	.c-boek__image {
+		display: none;
+	}
+	.c-content-label {
+		font-size: 1em;
+	}
+
+	.c-boek-text__head > h1 {
+		font-size: 1.1em;
+		font-weight: 800;
+	}
+
+	.c-boek-auteur {
+		margin: 0;
+		font-size: 1.1em;
+		font-weight: 600;
+	}
+
+	.c-content > h3 {
+		font-size: 1em;
+		font-weight: 600;
+	}
+
+	.c-content > p {
+		font-size: 1em;
+		font-weight: 400;
+	}
+
+	.c-content {
+		margin-top: 0.75rem;
+		display: grid;
+		grid-template-columns: 100px 1fr;
+		grid-template-rows: 1fr 50px 50px;
+	}
+
+	.c-boek-text__head-vgl > a {
+		display: none;
 	}
 }
 
@@ -592,23 +642,38 @@ a:focus {
 */
 
 .c-button {
-	display: none; /* Hidden by default */
-	position: fixed; /* Fixed/sticky position */
-	bottom: 20px; /* Place the button at the bottom of the page */
-	right: 30px; /* Place the button 30px from the right */
-	z-index: 99; /* Make sure it does not overlap */
-	border: none; /* Remove borders */
-	outline: none; /* Remove outline */
-	background-color: red; /* Set a background color */
-	color: green; /* Text color */
-	cursor: pointer; /* Add a mouse pointer on hover */
-	padding: 15px; /* Some padding */
-	border-radius: 10px; /* Rounded corners */
-	font-size: 18px; /* Increase font size */
+	display: none;
+	position: fixed;
+	bottom: 2em;
+	right: 12em;
+	font-weight: 600;
+	z-index: 99;
+	border: none;
+	outline: none;
+	background-color: var(--button-backgroundColor);
+	color: var(--button-color);
+	cursor: pointer;
+	padding: calc(var(--global-baseline) * 2);
+	border-radius: 1em;
+	font-size: 1.25em; /* 20 / 16 = 1.25*/
 }
 
-.c-button:hover {
-	background-color: #555; /* Add a dark-grey background on hover */
+.c-button:hover,
+.c-button:focus {
+	background-color: var(--button-focus-backgroundColor);
+}
+
+.c-test:active {
+	background-color: var(--button-backgroundColor);
+}
+
+@media (max-width: 768px) {
+	.c-button {
+		right: 1em;
+		bottom: 1em;
+		font-weight: 400;
+		font-size: 1em;
+	}
 }
 
 /*------------------------------------*\
