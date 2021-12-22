@@ -43,28 +43,36 @@ const showHardCovers = function (jsonObject) {
 			verschil = 'New Entry';
 		} else if (verschil == 0) {
 			foto = 'equel';
+			verschil = '';
 		} else if (verschil > 0) {
-			foto = 'new';
+			foto = 'up';
 		}
 
-		htmlString += `<article class="c-boek">                
-		<img class="c-boek__image" src="${afbeelding}" />
+		htmlString += `<div class="c-boek">
+				<div class="c-boek__image">
+					<img src="${afbeelding}" />
+				</div> 
 
-		<div class="c-boek_text">
-			<h1 class="c-boek__title">${titelUpper}</h1>
-			<img src="images/book_${foto}_black_24dp.svg" alt="">
-			<a>${verschil}</a>
-
-			<a></br>Vorige week ${nummerVorigeWeek} </br> deze week ${nummer}</a>
-			
-			<h2>${auteur}</h2>    
-			<div class="c-boek__content">
-			  <a><span class="c-boek__label">Omschrijving: </span>${omschrijving}</a>
-			  <a><span class="c-boek__label">ISBN: </span>${isbnNummer}</a>
-			  <a><span class="c-boek__label">Bestellen: </span> <a class="c-link-cta" href="${kopen}">Amazon.com</a></a>     
-			</div>
-	   </div>
-	  </article>`;
+				<div class="c-boek-text">
+					<div class="c-boek-text__head">
+						<h1 class="c-boek-text__head-number">${nummer}.</h1>
+						<h1 class="c-boek__title">${titelUpper}</h1>
+						<div class="c-boek-text__head-vgl">
+							<a>${verschil}</a>
+							<img src="images/book_${foto}_black_24dp.svg" alt="">                           
+						</div>
+					</div>
+					<h2 class="c-boek-auteur">${auteur}</h2>    
+					<div class="c-content">
+						<h3 class="c-content-omschrijving">Omschrijving:</h3>
+						<p class="c-content-omschrijving__text">${omschrijving}</p>
+						<h3 class="c-content-isbn">ISBN:</h3>
+						<p class="c-content-isbn__text">${isbnNummer}</p>
+						<h3 class="c-content-bestellen">Bestellen: </h3>
+						<a class="c-link-cta" href="${kopen}">Amazon.com</a>
+					</div>
+				</div>
+			</div>`;
 	}
 
 	htmlBoek.innerHTML = htmlString;

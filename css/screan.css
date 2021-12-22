@@ -118,21 +118,21 @@ h3 {
 }
 
 h1 {
-	font-size: 36px;
+	font-size: 2em;
 	line-height: 48px;
-	margin: 0 0 24px;
+	margin: 0 0 0;
 }
 
 h2 {
 	font-size: 32px;
 	line-height: 40px;
-	margin: 0 0 24px;
+	margin: 0 0 0 0;
 }
 
 h3 {
 	font-size: 26px;
 	line-height: 32px;
-	margin: 0 0 24px;
+	margin: 0 0 0 0;
 }
 
 h4,
@@ -516,62 +516,73 @@ a:focus {
 	}
 }
 /*
-    Component: Card
+    Component: Boek
     ---
-    Card with box shadow
+    Alles voor het boek
 */
-
-/*
-    Component: Forms
-    ---
-    Everything form related here
-*/
-
-/*
-    Component: Input
-    ---
-    Class to put on all input="text" like form inputs
-*/
-
-.c-input {
+.c-boek {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	/* justify-content: center; */
+	margin-bottom: 2em;
 }
 
-.c-input:focus {
+.c-boek__image {
+	padding-right: 2em;
 }
 
-/*
-    Component: Label
-    ---
-    Class to put on all form labels
-*/
-
-.c-label {
+.c-boek-text {
+	/* margin-top: 1em; */
 }
 
-/* If a input is focused within the form-field class change te color of the label */
-
-.c-form-field:focus-within .c-label {
+.c-boek-text__head {
+	display: flex;
+	align-items: center;
+	flex-direction: row;
 }
 
-/*
-    Component: Button
-    ---
-    Class to put on form buttons or links
-*/
-
-.c-button {
+.c-boek-text__head-number {
+	margin-right: 1em;
 }
 
-.c-button:hover {
+.c-boek-text__head-vgl {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin-left: auto;
+	margin-right: 0;
 }
 
-.c-button:focus {
+.c-boek-text__head-vgl > img {
+	min-height: 3rem;
 }
 
-.c-button:active {
+.c-boek-text__head-vgl > a {
+	font-size: 1.5em;
 }
 
-.c-button--block {
+.c-boek-auteur {
+	margin-top: 1rem;
+}
+
+.c-content {
+	margin-top: 1em;
+	display: grid;
+	grid-template-columns: 200px 500px;
+	grid-template-rows: 50px 50px 50px;
+}
+
+@media (max-width: 768px) {
+	.c-boek {
+		/* display: flex; */
+
+		align-content: space-between;
+	}
+
+	.c-boek__image {
+	}
 }
 
 /*------------------------------------*\
@@ -912,63 +923,3 @@ No media query since this is the default in mobile first design
     Inlined to avoid the additional HTTP request:
     http://www.phpied.com/delay-loading-your-print-css/
 */
-
-@media print {
-	*,
-	*:before,
-	*:after {
-		background: transparent !important;
-		color: #000 !important;
-		/* Black prints faster:
-        http://www.sanbeiji.com/archives/953 */
-		box-shadow: none !important;
-		text-shadow: none !important;
-	}
-	a,
-	a:visited {
-		text-decoration: underline;
-	}
-	a[href]:after {
-		content: ' (' attr(href) ')';
-	}
-	abbr[title]:after {
-		content: ' (' attr(title) ')';
-	}
-	/* 	
-    * Don't show links that are fragment identifiers,
-    * or use the `javascript:` pseudo protocol
-    */
-	a[href^='#']:after,
-	a[href^='javascript:']:after {
-		content: '';
-	}
-	pre {
-		white-space: pre-wrap !important;
-	}
-	pre,
-	blockquote {
-		border: 1px solid #999;
-		page-break-inside: avoid;
-	}
-	/*
-    * Printing Tables:
-    * http://css-discuss.incutio.com/wiki/Printing_Tables
-    */
-	thead {
-		display: table-header-group;
-	}
-	tr,
-	img {
-		page-break-inside: avoid;
-	}
-	p,
-	h2,
-	h3 {
-		orphans: 3;
-		widows: 3;
-	}
-	h2,
-	h3 {
-		page-break-after: avoid;
-	}
-}
