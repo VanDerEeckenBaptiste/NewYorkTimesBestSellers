@@ -242,32 +242,32 @@ a:focus {
 }
 
 .o-row--header {
-	padding-bottom: 2em;
+	padding-bottom: var(--global-whitespace-xl);
 }
 
 /* size modifiers */
 
 .o-row--lg {
-	padding-top: 48px;
+	padding-top: var(--global-whitespace-xl);
 	padding-bottom: 24px;
 }
 
 .o-row--xl {
-	padding-top: 72px;
-	padding-bottom: 48px;
+	padding-top: var(--global-whitespace-xxl);
+	padding-bottom: var(--global-whitespace-xl);
 }
 
 @media (min-width: 768px) {
 	.o-row {
-		padding-left: 48px;
-		padding-right: 48px;
+		padding-left: var(--global-whitespace-xl);
+		padding-right: var(--global-whitespace-xl);
 	}
 }
 
 @media (min-width: 992px) {
 	.o-row--xl {
-		padding-top: 96px;
-		padding-bottom: 72px;
+		padding-top: calc(var(--global-whitespace-xl) * 2);
+		padding-bottom: var(--global-whitespace-xxl);
 	}
 }
 
@@ -490,12 +490,12 @@ a:focus {
 }
 
 .c-logo__symbol {
-	height: 6em;
+	height: calc(var(--global-whitespace-xl) * 2);
 }
 
 @media (min-width: 768px) {
 	.c-logo__symbol {
-		height: 8em;
+		height: calc(var(--global-whitespace-lg) * 4);
 	}
 }
 /*
@@ -542,16 +542,12 @@ a:focus {
 	flex-wrap: wrap;
 	align-items: flex-start;
 	justify-content: center;
-	margin-bottom: 2em;
+	margin-bottom: var(--global-whitespace-lf);
 }
 
 .c-boek__image {
-	padding-right: 2em;
-	padding-bottom: 2em;
-}
-
-.c-boek-text {
-	/* padding-top: 2em; */
+	padding-right: var(--global-whitespace-lg);
+	padding-bottom: var(--global-whitespace-lg);
 }
 
 .c-boek-text__head {
@@ -579,11 +575,11 @@ a:focus {
 }
 
 .c-boek-auteur {
-	margin-top: 0.5rem;
+	margin-top: var(--global-baseline);
 }
 
 .c-content {
-	margin-top: 1rem;
+	margin-top: var(--global-whitespace-md);
 	display: grid;
 	grid-template-columns: 200px 500px;
 	grid-template-rows: 1fr 50px 50px;
@@ -624,7 +620,7 @@ a:focus {
 	}
 
 	.c-content {
-		margin-top: 0.75rem;
+		margin-top: var(--global-whitespace-md);
 		display: grid;
 		grid-template-columns: 100px 1fr;
 		grid-template-rows: 1fr 50px 50px;
@@ -645,7 +641,7 @@ a:focus {
 	display: none;
 	position: fixed;
 	bottom: 2em;
-	right: 12em;
+	right: 8em;
 	font-weight: 600;
 	z-index: 99;
 	border: none;
