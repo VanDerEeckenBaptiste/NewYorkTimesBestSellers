@@ -641,7 +641,7 @@ a:focus {
 	display: none;
 	position: fixed;
 	bottom: 2em;
-	right: 8em;
+	right: 4em;
 	font-weight: 600;
 	z-index: 99;
 	border: none;
